@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel='stylesheet' href='/static/style.css'>
+</head>
+<body>
+<h2>Attendance Dashboard</h2>
+<p style='text-align:center;'>Date: {{ today }}</p>
+<form method='POST' action='/mark'>
+<table>
+<tr><th>Reg No</th><th>Name</th><th>Status</th></tr>
+{% for s in students %}
+<tr>
+<td>{{ s.reg_no }}</td>
+<td>{{ s.name }}</td>
+<td>
+<select name='{{ s.id }}'>
+<option value='Present'>Present</option>
+<option value='Absent'>Absent</option>
+</select>
+</td>
+</tr>
+{% endfor %}
+</table>
+<button>Submit Attendance</button>
+</form>
+<a href='/export'>Export Absentees PDF</a>
+</body>
+</html>
