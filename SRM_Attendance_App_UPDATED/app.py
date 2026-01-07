@@ -72,4 +72,4 @@ if __name__ == '__main__':
             db.session.add(Student(reg_no='SRM002', name='Priya Sharma'))
             db.session.add(Student(reg_no='SRM003', name='Rahul Singh'))
             db.session.commit()
-    app.run()
+    
